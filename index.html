@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarea escolar - Cálculo Integral</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header{
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main{
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 12px;
+    }
+
+    .card{
+      background: white;
+      padding: 16px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .formula{
+      display: inline-block;
+      background: #eef4ff;
+      border: 1px solid #cfe0ff;
+      padding: 6px 10px;
+      border-radius: 8px;
+      margin: 6px 0;
+      font-family: "Courier New", monospace;
+    }
+
+    button{
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #1f6feb;
+      color: white;
+      cursor: pointer;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    button:hover{ opacity: 0.9; }
+
+    .msg{
+      margin-top: 10px;
+      font-weight: bold;
+      color: #0a6;
+      display: none; /* empieza oculto */
+    }
+
+    footer{
+      text-align: center;
+      padding: 14px;
+      color: #555;
+    }
+
+    ul{ margin: 8px 0 0; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Cálculo Integral</h1>
+    <p>Tarea escolar: conceptos básicos + ejemplos</p>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <h2>¿Qué es una integral?</h2>
+      <p>
+        Una integral sirve para <b>sumar cantidades muy pequeñas</b>.
+        Se usa para calcular el <b>área bajo una curva</b> y otras acumulaciones.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Tipos de integrales</h2>
+      <ul>
+        <li>
+          <b>Indefinida:</b> da una familia de funciones.
+          <br><span class="formula">∫ f(x) dx = F(x) + C</span>
+        </li>
+        <li>
+          <b>Definida:</b> da un número entre a y b.
+          <br><span class="formula">∫<sub>a</sub><sup>b</sup> f(x) dx = F(b) − F(a)</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Reglas básicas</h2>
+      <ul>
+        <li><b>Potencia:</b> <span class="formula">∫ x<sup>n</sup> dx = x<sup>n+1</sup>/(n+1) + C</span> (si n ≠ −1)</li>
+        <li><b>Constante:</b> <span class="formula">∫ k dx = kx + C</span></li>
+        <li><b>1/x:</b> <span class="formula">∫ (1/x) dx = ln|x| + C</span></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Ejemplos</h2>
+
+      <p><b>Ejemplo 1 (indefinida):</b></p>
+      <p class="formula">∫ 3x<sup>2</sup> dx = x<sup>3</sup> + C</p>
+
+      <p><b>Ejemplo 2 (indefinida):</b></p>
+      <p class="formula">∫ (2x + 5) dx = x<sup>2</sup> + 5x + C</p>
+
+      <p><b>Ejemplo 3 (definida):</b></p>
+      <p class="formula">∫<sub>0</sub><sup>2</sup> x dx = (2<sup>2</sup>/2) − (0<sup>2</sup>/2) = 2</p>
+
+      <button id="btn">Mostrar conclusión</button>
+      <p id="msg" class="msg">
+        ✅ Conclusión: la integral ayuda a calcular acumulaciones como el área bajo la curva.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Datos del alumno</h2>
+      <ul>
+        <li><b>Nombre:</b> (Dylan Barrios,AnaBerta,KarlaG,Maria)</li>
+        <li><b>Grupo:</b> (6"A")</li>
+        <li><b>Materia:</b> (Paginas web)</li>
+        <li><b>Fecha:</b> (20/02/26)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <small>Trabajo escolar — 2026</small>
+  </footer>
+
+  <script>
+    // Interacción mínima: mostrar/ocultar la conclusión
+    const btn = document.getElementById("btn");
+    const msg = document.getElementById("msg");
+
+    btn.addEventListener("click", () => {
+      const visible = msg.style.display === "block";
+      msg.style.display = visible ? "none" : "block";
+      btn.textContent = visible ? "Mostrar conclusión" : "Ocultar conclusión";
+    });
+  </script>
+</body>
+</html>
